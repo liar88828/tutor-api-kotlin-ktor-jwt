@@ -1,0 +1,17 @@
+@api=http://localhost:8080
+
+GET {{api}}/api/user
+###
+GET {{api}}/api/user/e53b3d22-3751-447e-88d2-3a1f23848cf7
+###
+POST {{api}}/api/user
+Content-Type: application/json
+
+{
+  "username": "user12",
+  "password": "12345678"
+}
+
+###
+
+
