@@ -6,8 +6,7 @@ import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
-import org.w3c.dom.ls.LSSerializer
-import java.util.UUID
+import java.util.*
 
 object UUIDSerializer : KSerializer<UUID> {
 	override val descriptor: SerialDescriptor

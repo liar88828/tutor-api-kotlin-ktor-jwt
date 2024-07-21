@@ -2,7 +2,8 @@ package example.com
 
 import example.com.plugins.*
 import example.com.repository.UserRepo
-import example.com.service.userServ
+import example.com.service.JwtService
+import example.com.service.UserService
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
@@ -11,8 +12,9 @@ fun main(args: Array<String>) {
 
 fun Application.module() {
 	val userRepository = UserRepo()
-	val userServ = userServ(userRepository)
+	val userService = UserService(userRepository)
+	val jwtService = JwtService(this, userService)
 	configureSerialization()
-	configureRouting(userServ)
-	configureSecurity()
+	configureSecurity(jwtService)
+	configureRouting(userService,jwtService)
 }

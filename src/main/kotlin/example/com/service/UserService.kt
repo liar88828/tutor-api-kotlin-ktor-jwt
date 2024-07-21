@@ -4,7 +4,7 @@ import example.com.model.User
 import example.com.repository.UserRepo
 import java.util.*
 
-class userServ(
+class UserService(
 	private val userRepo: UserRepo
 ) {
 	fun findAll(): List<User> = userRepo.findAll()
